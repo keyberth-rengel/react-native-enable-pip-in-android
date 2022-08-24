@@ -6,7 +6,12 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const EnablePipInAndroid = NativeModules.EnablePipInAndroid  ? NativeModules.EnablePipInAndroid  : new Proxy(
+/**
+ * validate modules
+ */
+const EnablePipInAndroid = NativeModules.EnablePipInAndroid
+  ? NativeModules.EnablePipInAndroid
+  : new Proxy(
       {},
       {
         get() {
@@ -15,6 +20,6 @@ const EnablePipInAndroid = NativeModules.EnablePipInAndroid  ? NativeModules.Ena
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return EnablePipInAndroid.multiply(a, b);
+export function enterPictureInPictureMode() {
+  EnablePipInAndroid.enterPictureInPictureMode();
 }
