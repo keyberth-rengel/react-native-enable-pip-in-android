@@ -21,6 +21,5 @@ const EnablePipInAndroid = NativeModules.EnablePipInAndroid
     );
 
 export function enterPictureInPictureMode(): Promise<void> {
-  console.log('enable Picture-in-Picture in Android');
   return EnablePipInAndroid.enterPictureInPictureMode();
 }
